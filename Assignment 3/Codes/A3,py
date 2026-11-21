@@ -1,0 +1,9 @@
+def reverse_in_place(a, start, stop):
+    if start >= stop:
+        return
+    a[start], a[stop] = a[stop], a[start]
+    reverse_in_place(a, start + 1, stop - 1)
+
+items = [1, 2, 3, 4, 5, 6]
+reverse_in_place(items, 0, len(items) - 1)
+print(items)  # [6, 5, 4, 3, 2, 1]
